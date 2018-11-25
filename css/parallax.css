@@ -1,0 +1,252 @@
+.parallax {
+    height: 74vh;
+}
+
+@media screen and (max-width: 1050px) {
+    .parallax {
+        height: 90vh;
+    }
+}
+
+#amerikanskepannekaker {
+    position: relative;
+
+    background-image: url(../bilder/amerikanskepannekaker.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#armeriddere {
+    position: relative;
+
+    background-image: url(../bilder/armeriddere.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#bakthvitlokskylling {
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+
+    background-image: url(../bilder/bakthvitlokskylling.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#brownies {
+    position: relative;
+
+    background-image: url(../bilder/brownies.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#eggerøre {
+    position: relative;
+
+    background-image: url(../bilder/eggerore.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#grovescones {
+    position: relative;
+
+    background-image: url(../bilder/grovescones.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hamburger {
+    position: relative;
+
+    background-image: url(../bilder/hamburger.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#havrebarer {
+    position: relative;
+
+    background-image: url(../bilder/havrebarer.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hveteboller {
+    position: relative;
+
+    background-image: url(../bilder/hveteboller.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#kanelboller {
+    position: relative;
+
+    background-image: url(../bilder/kanelboller.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#kyllingfrikasse {
+    position: relative;
+
+    background-image: url(../bilder/kyllingfrikasse.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#lapper {
+    position: relative;
+
+    background-image: url(../bilder/lapper.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#limonade {
+    position: relative;
+
+    background-image: url(../bilder/limonade.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#matmuffins {
+    position: relative;
+
+    background-image: url(../bilder/matmuffins.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pannekaker {
+    position: relative;
+
+    background-image: url(../bilder/pannekaker.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pastaallimone {
+    position: relative;
+
+    background-image: url(../bilder/pastaallimone.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pastacarbonara {
+    position: relative;
+
+    background-image: url(../bilder/pastacarbonara.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pizza {
+    position: relative;
+
+    background-image: url(../bilder/pizza.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pizzadeig {
+    position: relative;
+
+    background-image: url(../bilder/pizzadeig.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pizzasaus {
+    position: relative;
+
+    background-image: url(../bilder/pizzasaus.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#polsegrateng {
+    position: relative;
+
+    background-image: url(../bilder/polsegrateng.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#sitronkake {
+    position: relative;
+
+    background-image: url(../bilder/sitronkake.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#sjokolademilkshake {
+    position: relative;
+
+    background-image: url(../bilder/sjokolademilkshake.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#skoleboller {
+    position: relative;
+
+    background-image: url(../bilder/skoleboller.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

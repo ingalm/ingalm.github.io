@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+    background: #3B3B3B;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+#header {
+    height: 13vh;
+
+    position: relative;
+}
+
+#linkhome {
+    color: white;
+    font-family: quicksand, monospace;
+    font-size: 2vw;
+    text-decoration: none;
+    text-align: center;
+
+    position: absolute;
+    top: 15%;
+
+    width: 20vw;
+
+    margin-left: 40vw;
+}
+
+#linksubhome {
+    color: white;
+    font-family: quicksand, monospace;
+    font-size: 1.5vw;
+    text-decoration: none;
+    text-align: center;
+
+    position: absolute;
+    top: 55%;
+
+    width: 10vw;
+
+    margin-left: 45vw;
+}
+
+#wrapper div {
+    display: inline-block;
+}
+
+#innhold {
+    float: left;
+    height: 100vh;
+    max-height: 100vh;
+    width: 22vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    position: sticky;
+    position: -webkit-sticky; /*safari*/
+    top: 0;
+
+    background-color: #313131;
+    color: white;
+    font-family: "nunito sans", monospace;
+}
+
+#innhold h1 {
+    font-family: quicksand, monospace;
+    font-size: 3.5vh;
+
+    margin: 5vh 0 0 1.5vw;
+}
+
+#innhold dl {
+    margin: 4vh 0 0 1.5vw;
+
+    width: 85%;
+}
+
+#innhold dt {
+    font-size: 1vw;
+    padding: 0 0 20px 0;
+}
+
+#innhold dd {
+    font-size: 0.8vw;
+
+    opacity: 0.8;
+
+    margin: -15px 0 10px 20px;
+}
+
+.innholdsplit {
+    margin-bottom: 20px;
+    border-bottom: solid #424242;
+}
+
+#oppskrift {
+    color: white;
+    font-family: "nunito sans", monospace;
+
+    width: 73vw;
+
+}
+
+#oppskrift h1 {
+    margin: 5vh 0 0 1.5vw;
+
+    font-family: quicksand, monospace;
+    font-size: 3.5vh;
+}
+
+#oppskrift h2 {
+    margin: 4vh 0 0 1.5vw;
+
+    font-family: quicksand, monospace;
+    font-size: 3vh;
+}
+
+#oppskrift ol {
+    margin: 4vh 0 0 1.5vw;
+    padding: 0 0 0 2.5vw;
+}
+
+#oppskrift li {
+    padding: 0 0 20px 1vw;
+
+    font-size: 2vh;
+}
+
+#oppskrift p {
+    margin: 20px 0 30px 4vw;
+    font-size: 2vh;
+}
+
+@media screen and (max-width: 770px){
+    #header {
+        height: 15vh;
+    }
+
+    #linkhome {
+        top: 4vh;
+        width: 50vw;
+        margin-left: 25vw;
+
+        font-size: 3vh;
+    }
+
+    #linksubhome {
+        top: 9vh;
+        width: 20vw;
+        margin-left: 40vw;
+
+        font-size: 2vh;
+    }
+
+    #innhold {
+        width: 100vw;
+        height: auto;
+
+        position: static;
+    }
+
+    #innhold h1 {
+        margin: 20px;
+        margin-left: 30px;
+
+        font-size: 3vh;
+    }
+
+    #innhold dl {
+        margin: 0 5% 20px 5% ;
+        width: 90%;
+    }
+
+    #innhold dt {
+        font-size: 1.5vh;
+    }
+
+    #innhold dd {
+        font-size: 1.2vh;
+
+        margin: -10px 0 15px 20px;
+    }
+
+    #oppskrift {
+        width: 100vw;
+    }
+
+    #oppskrift h1 {
+        margin: 20px;
+        margin-left: 30px;
+
+        font-size: 3vh;
+    }
+
+    #oppskrift ol {
+        margin: 0 5% 0 8%;
+        padding: 0;
+    }
+
+    #oppskrift li {
+        font-size: 1.5vh;
+    }
+
+    #oppskrift p {
+        margin: 0 5% 30px 8%;
+
+        font-size: 1.5vh;
+    }
+}
+
+/*
+Scrollbar
+*/
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #3B3B3B;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #232323;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #2b2b2b;
+}

@@ -1,0 +1,28 @@
+Frokost		Fine rundstykker
+Frokost		Vafler
+Frokost		Pizzasnurrer
+Frokost		Frokostpannekaker
+
+Middag		Ovnsstekte båter
+Middag		Pizza
+Middag		Nudler med krydderblanding
+				Må finne krydderblanding
+Middag		Grøt
+
+Dessert		Havreflarn
+Dessert		Sjokoladeis
+Dessert		Hjemmelaget marsipan - detsoteliv.no
+Dessert		Appelsinsorbet og sitronsorbet - matprat.no 
+				Sprøytemidler på sitroner kan skape en sær bismak på kaka, bruk økologiske sitroner
+Dessert		Makroner?
+Dessert		Milkshake - melk.no
+				Kiwi og appelsin m.m
+				Sjokolade er allerede lagt til
+
+Des&Fro		Smoothie
+Des&Bak 	Krydderkake
+Des&Bak 	Vaniljekake?
+Des&Bak 	Sitronbrownies - Lemonies fra detsoteliv.no
+
+Bakst		Mandelkjeks - trinesmatblogg.no
+Bakst		Krumkaker
