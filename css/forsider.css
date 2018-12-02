@@ -125,6 +125,10 @@ input {
     margin-bottom: -2vh;
 }
 
+#søk img:hover {
+    cursor: pointer;
+}
+
 input:focus {
     outline: none;
 }
