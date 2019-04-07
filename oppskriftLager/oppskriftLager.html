@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="oppskriftLager.css">
+    <script src="oppskriftLager.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+    <title>Kokeboka</title>
+</head>
+<body>
+<a href="../index.html" id="linkhome">Kokeboka</a>
+
+<form id="oppskriftForm" action="">
+
+    <input id="oppskriftNavn" type="text" placeholder="Navn på oppskrift">
+
+    <div>
+        <div id="innhold">
+            <h2>Ingredienser</h2>
+            <label for="temp">Temp:</label>
+            <input id="temp" type="text">
+            <label for="funksjon">Funksjon:</label>
+            <input id="funksjon" type="text">
+            <label for="tid">Tid:</label>
+            <input id="tid" type="text">
+            <button type="button" onclick="ekstraIngrediens()">Legg til ingrediens</button>
+            <button type="button" onclick="innholdDeling()">Legg til ingrediensdeling</button>
+        </div>
+    </div>
+
+    <div>
+        <div id="oppskrift">
+            <h2>Oppskrift</h2>
+            <button type="button" onclick="ekstraSteg()">Legg til steg</button>
+            <button type="button" onclick="lineBreak()">Mellomrom</button>
+        </div>
+    </div>
+
+    <div>
+        <label for="frokost">Frokost</label>
+        <input id="frokost" type="checkbox">
+        <label for="middag">Middag</label>
+        <input id="middag" type="checkbox">
+        <label for="dessert">Dessert</label>
+        <input id="dessert" type="checkbox">
+        <label for="bakst">Bakst</label>
+        <input id="bakst" type="checkbox">
+    </div>
+</form>
+<button form="oppskriftForm" onclick="downloadButton()" id="dwn-btn">Lag Oppskrift</button>
+</body>
+</html>

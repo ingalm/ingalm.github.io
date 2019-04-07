@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    background: #3B3B3B;
+    color: white;
+}
+
+#linkhome {
+    color: white;
+    font-family: quicksand, monospace;
+    font-size: 2vw;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+
+    width: 20vw;
+    margin: auto;
+    padding: 20px 0;
+}
+
+form {
+    font-family: quicksand, monospace;
+}
+
+form > input {
+    width: 20vw;
+    height: 25px;
+    margin: auto;
+    grid-column: span 2;
+    display: block;
+}
+
+form > div {
+    display: inline-block;
+    margin-right: -4px;
+}
+
+form > div:first-of-type {
+    width: 20%;
+}
+
+form > div:nth-of-type(2) {
+    width: 80%;
+}
+
+#innhold {
+    display: grid;
+    grid-template-columns: 100px;
+}
+
+#oppskrift {
+    display: grid;
+    grid-template-columns: 50px;
+}
+
+form h2 {
+    grid-column: span 2;
+}
+
+form div button {
+    grid-column: span 2;
+}
+
+p {
+    text-align: center;
+    grid-column: 1/2;
+}
+
+.deling {
+    background-color: lightsteelblue;
+}

@@ -77,7 +77,7 @@ body {
 
 #innhold dt {
     font-size: 1vw;
-    padding: 0 0 20px 0;
+    padding-bottom: 20px;
 }
 
 #innhold dd {
@@ -89,8 +89,10 @@ body {
 }
 
 .innholdsplit {
-    margin-bottom: 20px;
-    border-bottom: solid #424242;
+    border-top: solid #424242;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 1.5vw !important;
 }
 
 #oppskrift {

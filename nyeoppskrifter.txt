@@ -3,17 +3,17 @@ Frokost		Vafler
 Frokost		Pizzasnurrer
 Frokost		Frokostpannekaker
 
-Middag		Ovnsstekte båter
+Middag		Ovnsstekte bÃ¥ter
 Middag		Pizza
 Middag		Nudler med krydderblanding
-				Må finne krydderblanding
-Middag		Grøt
+				MÃ¥ finne krydderblanding
+Middag		GrÃ¸t
 
 Dessert		Havreflarn
 Dessert		Sjokoladeis
 Dessert		Hjemmelaget marsipan - detsoteliv.no
 Dessert		Appelsinsorbet og sitronsorbet - matprat.no 
-				Sprøytemidler på sitroner kan skape en sær bismak på kaka, bruk økologiske sitroner
+				SprÃ¸ytemidler pÃ¸ sitroner kan skape en sur bismak pÃ¥ kaka, bruk Ã¸kologiske sitroner
 Dessert		Makroner?
 Dessert		Milkshake - melk.no
 				Kiwi og appelsin m.m

@@ -4,7 +4,7 @@ function goBack() {
 
 function myFunction() {
     // Declare variables
-    var input, filter, list, li, a, i;
+    var input, filter, list, li, i;
     input = document.getElementById('input');
     filter = input.value.toUpperCase();
     list = document.getElementById("list");
