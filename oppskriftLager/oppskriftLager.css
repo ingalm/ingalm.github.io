@@ -1,70 +1,89 @@
 body {
     margin: 0;
-    background: #3B3B3B;
-    color: white;
+    background: white;
+    color: black;
 }
 
 #linkhome {
-    color: white;
-    font-family: quicksand, monospace;
+    font-family: montserrat, monospace;
     font-size: 2vw;
     text-decoration: none;
     text-align: center;
     display: block;
+    color: black;
 
     width: 20vw;
+    line-height: 80px;
     margin: auto;
-    padding: 20px 0;
-}
-
-form {
-    font-family: quicksand, monospace;
 }
 
 form > input {
-    width: 20vw;
-    height: 25px;
-    margin: auto;
-    grid-column: span 2;
     display: block;
+    margin: auto;
+    height: 20px;
+    padding: 5px;
+    border: none;
+    background: #ebebeb;
 }
 
-form > div {
-    display: inline-block;
-    margin-right: -4px;
+#oppskriftInput h2 {
+    grid-column: span 2;
+    font-family: montserrat;
+    margin-left: 10px;
 }
 
-form > div:first-of-type {
-    width: 20%;
-}
-
-form > div:nth-of-type(2) {
-    width: 80%;
-}
-
-#innhold {
-    display: grid;
-    grid-template-columns: 100px;
-}
-
-#oppskrift {
-    display: grid;
-    grid-template-columns: 50px;
-}
-
-form h2 {
+#oppskriftInput button {
     grid-column: span 2;
 }
 
-form div button {
+#oppskriftInput div div {
     grid-column: span 2;
 }
 
-p {
+#oppskriftInput label {
+    margin-left: 10px;
+}
+
+#oppskriftInput p {
     text-align: center;
-    grid-column: 1/2;
 }
 
-.deling {
-    background-color: lightsteelblue;
+#innholdInput {
+    width: 20%;
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+}
+
+#anvisningsInput {
+    width: 80%;
+    margin-left: 20%;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: absolute;
+    top: 110px;
+}
+
+#ingredienser {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+}
+
+#anvisning {
+    display: grid;
+    grid-template-columns: 1fr 15fr;
+}
+
+#checkboxer {
+    width: 20%;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr 1fr;
+}
+
+#checkboxer input:hover {
+    cursor: pointer;
+}
+
+#checkboxer label:hover {
+    cursor: pointer;
 }

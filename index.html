@@ -1,45 +1,63 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Kokeboka</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <!--Scripts!-->
+    <title>Kokeboka</title>
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBk5YNUAV4pSDFLAo480bbfcyXWycgQMgM",
+            authDomain: "kokeboka-6ef3f.firebaseapp.com",
+            databaseURL: "https://kokeboka-6ef3f.firebaseio.com",
+            projectId: "kokeboka-6ef3f",
+            storageBucket: "kokeboka-6ef3f.appspot.com",
+            messagingSenderId: "564252652290"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="index.js" type="text/javascript"></script>
-    <!--Fonts!-->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
 </head>
+<body onload="loadIndex()">
+<header>
+    <div id="topBar">
+        <div id="login">
+            <a onclick="visLogin()">LEGG TIL OPPSKRIFT</a>
+            <div id="loginForm">
+                <img src="bilder/close.png" onclick="lukkLogin()">
+                <p>Logg inn som administrator</p>
+                <span id="feilmelding">Feil brukernavn eller passord</span>
+                <div>
+                    <input id="brukernavn" type="text" placeholder="Brukernavn">
+                    <input id="passord" type="password" placeholder="Passord">
+                </div>
+                <p onclick="loggInnKlikk()" id="loginBtn">Logg inn</p>
+            </div>
+        </div>
+    </div>
+</header>
 
-<body onresize="mobilePicture()" onload="mobilePicture()">
-    <a
-		    href="forsider/frokost.html">
-        <p>FROKOST</p>
-        <img id="frokost" src="bilder/frokostforside.jpg">
-    </a>
-    <a
-		    href="forsider/middag.html">
-        <p>MIDDAG</p>
-        <img id="middag" src="bilder/middagforside.jpg">
-    </a>
-    <a
-		    href="forsider/dessert.html">
-        <p>DESSERT</p>
-        <img id="dessert" src="bilder/dessertforside.jpg">
-    </a>
-    <a
-		    href="forsider/bakst.html">
-        <p>BAKST</p>
-        <img id="bakst" src="bilder/bakstforside.jpg">
-    </a>
-    <a
-		    href="forsider/alt.html">
-        <p>ALT</p>
-        <img id="alt" src="bilder/altforside.jpg">
-    </a>
-    <a id="prøve" href="forsider/proveoppskrifter.html">PRØVEOPPSKRIFTER</a>
+<main>
+    <img id="bakgrunnBilde">
+    <div id="navOppskrifter">
+        <p onclick="sorterFrokost()" href="#">FROKOST</p>
+        <p onclick="sorterMiddag()" href="#">MIDDAG</p>
+        <p onclick="sorterDessert()" href="#">DESSERT</p>
+        <p onclick="sorterBakst()" href="#">BAKST</p>
+        <p onclick="sorterAlt()" href="#">ALT</p>
+    </div>
+    <input onkeyup="search()" type="text" id="search">
+    <div id="oppskriftDiv">
+
+    </div>
+</main>
+
+<footer></footer>
 </body>
-
 </html>

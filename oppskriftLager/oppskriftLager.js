@@ -1,219 +1,128 @@
-
 function ekstraIngrediens() {
-    var block_to_insert_1, block_to_insert_2, container_block, n , pArray;
+    var block_to_insert_1, block_to_insert_2, container_block, n;
 
-    pArray = document.getElementById("innhold").getElementsByTagName("p");
-
-    if (pArray.length == 0) {
-        n = 1
-    }
-    else {
-        n = Number(pArray[pArray.length - 1].innerHTML) + 1
-    }
+    n = document.getElementById("ingredienser").getElementsByTagName("p").length + 1;
 
     block_to_insert_2 = document.createElement( 'input' );
-    block_to_insert_2.classList = "ingrediens";
     block_to_insert_1 = document.createElement('p');
     block_to_insert_1.innerHTML = n;
 
-    container_block = document.getElementById( 'innhold' );
+    container_block = document.getElementById( 'ingredienser' );
     container_block.appendChild(block_to_insert_1);
     container_block.appendChild(block_to_insert_2);
-}
-
-function innholdDeling() {
-    var block_to_insert_1, block_to_insert_2, container_block, number ;
-
-    number = 1;
-
-    block_to_insert_2 = document.createElement( 'input' );
-    block_to_insert_2.classList = "ingrediens";
-    block_to_insert_1 = document.createElement('p');
-    block_to_insert_1.innerHTML = number;
-
-    block_to_insert_2.classList.add("deling");
-
-    container_block = document.getElementById( 'innhold' );
-    container_block.appendChild(block_to_insert_1);
-    container_block.appendChild(block_to_insert_2);
-
 }
 
 function ekstraSteg() {
-    var block_to_insert_1, block_to_insert_2, container_block, number ;
+    var block_to_insert_1, block_to_insert_2, container_block, n ;
 
-    number = document.getElementById("oppskrift").getElementsByTagName("p").length + 1;
+    n = document.getElementById("anvisning").getElementsByTagName("p").length + 1;
 
     block_to_insert_2 = document.createElement( 'input' );
     block_to_insert_1 = document.createElement('p');
-    block_to_insert_1.innerHTML = number;
+    block_to_insert_1.innerHTML = n;
 
-    container_block = document.getElementById( 'oppskrift' );
+    container_block = document.getElementById( 'anvisning' );
     container_block.appendChild(block_to_insert_1);
     container_block.appendChild(block_to_insert_2);
 }
 
-function lineBreak() {
-    var block_to_insert, container_block;
-
-    block_to_insert = document.createElement('br');
-
-    container_block = document.getElementById( 'oppskrift' );
-    container_block.appendChild(block_to_insert);
-    container_block.appendChild(block_to_insert);
+function slettSisteIngrediens() {
+    let ingrediensListe = document.querySelector("#ingredienser").getElementsByTagName("input");
+    let tallListe = document.querySelector("#ingredienser").getElementsByTagName("p");
+    tallListe[tallListe.length - 1].outerHTML = "";
+    ingrediensListe[ingrediensListe.length - 1].outerHTML = "";
 }
 
-
-function download(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-
-    element.style.display = 'none';
-    document.body.appendChild(element);
-
-    element.click();
-
-    document.body.removeChild(element);
+function slettSisteSteg() {
+    let stegListe = document.querySelector("#anvisning").getElementsByTagName("input");
+    let tallListe = document.querySelector("#anvisning").getElementsByTagName("p");
+    tallListe[tallListe.length - 1].outerHTML = "";
+    stegListe[stegListe.length - 1].outerHTML = "";
 }
 
-// Start file download.
-function downloadButton() {
-    var text, filename, name, head, body, header, wrapper, innhold, oppskrift;
+let db = firebase.database();
+let kokebok = db.ref("kokebok");
+let ovnsfunksjoner = db.ref("ovnsfunksjoner");
 
-    name = document.getElementById("oppskriftNavn").value;
-    filename =  name.toLowerCase() + ".html";
+function hentOvnfunksjoner(snapshot) {
+    let inpFunksjon = document.querySelector("#funksjon");
 
-    head = "\t<title>Kokeboka</title>\n" +
-        "\t<meta charset=\"UTF-8\">\n" +
-        "\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n" +
-        "\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/oppskrift.css\">\n" +
-        "\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/parallax.css\">\n" +
-        "\t<!--Scripts!-->\n" +
-        "\t<script src=\"../index.js\" type=\"text/javascript\"></script>\n" +
-        "\t<!--Fonts!-->\n" +
-        "\t<link href=\"https://fonts.googleapis.com/css?family=Quicksand|Nunito+Sans\" rel=\"stylesheet\">";
+    let ovnfunksjon = snapshot.val();
+    let ovnfunksjonKey = snapshot.key;
 
-    header = "<div id=\"header\">\n" +
-        "\t<a id=\"linkhome\" href=\"https://ingalm.github.io\">KOKEBOKA</a>\n" +
-        "\t<a id=\"linksubhome\" href=\"#\" onclick=\"goBack()\">TILBAKE</a>\n" +
-        "</div>";
+    //Setter inn i registreringen av oppskrifter
+    inpFunksjon.innerHTML += `
+            <option value="${ovnfunksjonKey}">
+                ${ovnfunksjon.navn}
+            </option>`;
 
-    parallax = "<div class=\"parallax\" id=\"" + name.toLowerCase() + "\"></div>"
-
-    innholdInput = document.getElementById("innhold").getElementsByTagName("input");
-    innholdListe = "";
-
-    for (var i = 0; i < innholdInput; i++){
-        var inputText = innholdInput[i].value;
-        li = "<dt>" + inputText + "</dt>";
-        innholdListe += li;
-    }
-
-
-    innhold = "<div id=\"innhold\">\n" +
-        "\t\t<h1>INGREDIENSER</h1>\n" +
-        " " + innholdListe + "\n" +
-        " </div> \n";
-
-
-    wrapper = innhold;
-
-    body = header + parallax + wrapper;
-
-    text = head + body;
-
-    /*
-    //Temp, ovnsfunksjon og tid
-    if (document.getElementById("temp").value === "") {
-        temp = "";
-    }
-    else {
-        temp = '<dt><b>Temperatur:</b> ' + document.getElementById("temp").value + '°C</dt>'
-    }
-
-    if (document.getElementById("funksjon").value === "") {
-        funksjon = "";
-    }
-    else {
-        funksjon = '<dt><b>Funksjon:</b> ' + document.getElementById("funksjon").value + '</dt>'
-    }
-
-    if (document.getElementById("tid").value === "") {
-        tid = "";
-    }
-    else {
-        tid = '<dt><b>Tid:</b> ' + document.getElementById("tid").value + 'min</dt>'
-    }
-
-    //Innhold
-    var innhold = document.getElementById("innhold").getElementsByTagName("dl")[0];
-    var li = document.getElementsByClassName("ingrediens");
-
-    for (var i=0; i < li.lenght; i++) {
-        var ingred = li[i].value;
-
-        var item = document.createElement("dt");
-        item.innerHTML = ingred;
-        innhold.appendChild(item);
-    }*/
-
-    /*
-    text =
-    "<!DOCTYPE html>\n" +
-        "<html>\n" +
-        "\n" +
-        "<head>\n" +
-        "    <title>Kokeboka</title>\n" +
-        "    <meta charset=\"UTF-8\">\n" +
-        "    <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/oppskrift.css\">\n" +
-        "    <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/parallax.css\">\n" +
-        "    <!--Scripts!-->\n" +
-        "    <script src=\"../index.js\" type=\"text/javascript\"></script>\n" +
-        "    <script>function goBack() {\n" +
-        "        window.history.go(-1);\n" +
-        "    }</script>\n" +
-        "    <!--Fonts!-->\n" +
-        "    <link href=\"https://fonts.googleapis.com/css?family=Quicksand|Nunito+Sans\" rel=\"stylesheet\">\n" +
-        "</head>\n" +
-        "\n" +
-        "<body>\n" +
-        "    <div id=\"header\">\n" +
-        "        <a id=\"linkhome\" href=\"https://ingalm.github.io\">KOKEBOKA</a>\n" +
-        "        <a id=\"linksubhome\" href=\"#\" onclick=\"goBack()\">TILBAKE</a>\n" +
-        "    </div>\n" +
-        "    <div class=\"parallax\" id=\"" + name.toLowerCase() + "\"></div>\n" +
-        "    <div id=\"wrapper\">\n" +
-        "        <div id=\"innhold\">\n" +
-        "            <h1>INGREDIENSER</h1>\n" +
-        "            <dl>\n" +
-        "           " + temp + " " +
-        "           " + funksjon + " " +
-        "           " + tid + " " +
-        "                <dt class=\"innholdsplit\">Innhold</dt>\n" +
-        /*
-        "           "  + innhold + " " +
-        "            </dl>\n" +
-        "        </div>\n" +
-        "        <div id=\"oppskrift\">\n" +
-        "            <h1>" + name.toUpperCase() + "</h1>\n" +
-        "            <ol>\n" +
-        "                <li></li>\n" +
-        "            </ol>\n" +
-        "        </div>\n" +
-        "    </div>\n" +
-        "</body>\n" +
-        "\n" +
-        "</html>"
-    ;
-    */
-
-
-    download(filename, text);
 }
-/*
-Removing spaces between words
 
-var str = '/var/www/site/Brand new document.docx';
+function lagreOppskrift() {
+    let ingrediensListe = document.querySelector("#ingredienser").getElementsByTagName("input");
+    let stegListe = document.querySelector("#anvisning").getElementsByTagName("input");
 
-document.write( str.replace(/\s/g, '') );*/
+    let inpNavn = document.querySelector("#oppskriftNavn");
+
+    let noekkel = inpNavn.value;
+    let nyOppskrift = new oppskrift();
+
+    let nyOppskr = kokebok.child(noekkel);
+
+    for (let n = 0; n < ingrediensListe.length; n++) {
+        let ingrediens = ingrediensListe[n].value;
+        nyOppskrift.leggTilIngrediens(ingrediens);
+    }
+
+    for (let i = 0; i < stegListe.length; i++) {
+        let steg = stegListe[i].value;
+        nyOppskrift.leggTilSteg(steg);
+    }
+
+
+    //Tips
+    let temp, funksjon, tid;
+    temp = document.querySelector("#temp");
+    funksjon = document.querySelector("#funksjon");
+    tid = document.querySelector("#tid");
+
+    let tips = {
+        temp : temp.value,
+        funksjon : funksjon.value,
+        tid : tid.value
+    };
+
+    //Legger tips inn i databsen dersom det står noe i feltene
+    if (funksjon.value === "0") {
+        tips = {
+            funksjon : funksjon.value
+        }
+    }
+
+    nyOppskr.child("tips").set(tips);
+
+
+
+    //Legger ingredienser og steg inn i databasen
+    nyOppskr.child("ingredienser").set(nyOppskrift.ingredienser);
+    nyOppskr.child("steg").set(nyOppskrift.steg);
+
+    //Legger inn hvilken rett oppskriften er
+    let matrett = nyOppskr.child("matrett");
+
+    let checkboxListe = document.querySelector("#checkboxer").getElementsByTagName("input");
+    let retter = [];
+
+    for (let j = 0; j < checkboxListe.length; j++) {
+        let checkbox = checkboxListe[j];
+
+        if (checkbox.checked) {
+            retter.push(checkbox.value);
+        }
+    }
+
+    matrett.set(retter);
+
+}
+
+ovnsfunksjoner.on("child_added", hentOvnfunksjoner);

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kokeboka</title>
+
+    <link rel="stylesheet" href="css/oppskrift.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBk5YNUAV4pSDFLAo480bbfcyXWycgQMgM",
+            authDomain: "kokeboka-6ef3f.firebaseapp.com",
+            databaseURL: "https://kokeboka-6ef3f.firebaseio.com",
+            projectId: "kokeboka-6ef3f",
+            storageBucket: "kokeboka-6ef3f.appspot.com",
+            messagingSenderId: "564252652290"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="index.js" type="text/javascript"></script>
+
+</head>
+<body onload="hentValgtOppskrift()">
+<header>
+    <div id="topBar">
+        <a href="index.html">KOKEBOKA</a>
+    </div>
+</header>
+<div id="bilde"></div>
+<div id="wrapper">
+    <div id="innhold">
+        <h1>Ingredienser</h1>
+        <div id="ingrediensWrapper">
+            <div id="info">
+
+            </div>
+            <div id="ingredienser">
+
+            </div>
+        </div>
+    </div>
+    <div id="oppskrift">
+        <h1 id="navn"></h1>
+        <ol id="steg">
+
+        </ol>
+    </div>
+</div>
+</body>
+</html>
