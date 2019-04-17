@@ -87,3 +87,16 @@ form > input {
 #checkboxer label:hover {
     cursor: pointer;
 }
+
+@media (max-width: 1200px) {
+    #innholdInput {
+        width: 100%;
+        grid-template-columns: 1fr 7fr;
+    }
+
+    #anvisningsInput {
+        position: static;
+        width: 100%;
+        margin: 0;
+    }
+}
