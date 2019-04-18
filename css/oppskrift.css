@@ -103,7 +103,7 @@ body {
     #innhold h1 {
         margin: 40px 30px 40px 30px;
 
-        font-size: 3.5vw;
+        font-size: 1.8em;
     }
 
     #innhold p {
@@ -121,7 +121,7 @@ body {
     #oppskrift h1 {
         margin: 40px 30px 40px 30px;
 
-        font-size: 3vh;
+        font-size: 1.8em;
     }
 
     #oppskrift ol {
