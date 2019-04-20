@@ -63,7 +63,6 @@ body {
 #innhold p {
     font-family: montserrat, monospace;
     margin: 0 20px 40px 1.5vw;
-    font-size: 1em;
 }
 
 #oppskrift {
@@ -84,7 +83,6 @@ body {
 
 #oppskrift li {
     padding: 0 0 25px 1vw;
-    font-size: 1em;
     font-family: montserrat, monospace;
 }
 
