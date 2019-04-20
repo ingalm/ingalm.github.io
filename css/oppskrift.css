@@ -55,9 +55,9 @@ body {
 
 #innhold h1 {
     font-family: montserrat,monospace;
-    font-size: 3.5vh;
+    font-size: 1.5em;
 
-    margin: 5vh 0 4vh 1.5vw;
+    margin: 5vh 1.5vw 4vh 1.5vw;
 }
 
 #innhold p {
@@ -72,14 +72,14 @@ body {
 
 #oppskrift h1 {
     font-family: montserrat, monospace;
-    font-size: 3.5vh;
+    font-size: 1.5em;
 
-    margin: 5vh 0 4vh 3vw;
+    margin: 5vh 3vw 4vh 3vw;
 }
 
 #oppskrift ol {
     margin: 4vh 0 0 1.5vw;
-    padding: 0 0 0 2.5vw;
+    padding: 0 0 0 40px;
 }
 
 #oppskrift li {
