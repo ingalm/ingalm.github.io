@@ -197,6 +197,10 @@ footer {
     #oppskriftDiv {
         grid-template-columns: 3fr 3fr;
     }
+
+    .oppskrift p {
+        font-size: 115%;
+    }
 }
 
 ::-webkit-scrollbar {
