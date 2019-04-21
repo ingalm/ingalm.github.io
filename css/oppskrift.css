@@ -61,7 +61,7 @@ body {
 #innhold p {
     font-family: montserrat, monospace;
     margin: 0 20px 40px 1.5vw;
-    font-size: 1em;
+    font-size: 1.2vw;
 }
 
 #ingrediensWrapper {
@@ -88,7 +88,7 @@ body {
 #oppskrift li {
     padding: 0 0 25px 1vw;
     font-family: montserrat, monospace;
-    font-size: 1em;
+    font-size: 1.2vw;
 }
 
 @media screen and (max-width: 770px){
@@ -111,6 +111,7 @@ body {
 
     #innhold p {
         margin: 0 0 30px 30px;
+        font-size: 1em;
     }
 
     #ingredienser {
@@ -130,6 +131,10 @@ body {
     #oppskrift ol {
         margin: 0 5% 40px 40px;
         padding: 0;
+    }
+
+    #oppskrift li {
+        font-size: 1em;
     }
 }
 
