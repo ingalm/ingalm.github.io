@@ -87,14 +87,17 @@ function finnoppskrift() {
 function hentOppskrifter(snapshot) {
     let oppskriftDiv = document.querySelector("#oppskriftDiv");
     let oppskriftKey = snapshot.key;
+    let oppskrift = snapshot.val();
 
-    oppskriftDiv.innerHTML += `
+    if (oppskrift.matrett[0] != "5") {
+        oppskriftDiv.innerHTML += `
         <a onclick="lagreOppskriftLokalt(event)" class="oppskrift">
             <div></div>
             <img src="bilder/oppskrifter/` + camelize(oppskriftKey) + `.jpg">
             <p>${oppskriftKey}</p>
         </a>
     `
+    }
 }
 
 //Gjør om tekst til camelCase
@@ -136,6 +139,13 @@ function sorterBakst() {
     kokebok.orderByChild("matrett/1").equalTo("3").on("child_added", hentOppskrifter);
     kokebok.orderByChild("matrett/2").equalTo("3").on("child_added", hentOppskrifter);
     kokebok.orderByChild("matrett/3").equalTo("3").on("child_added", hentOppskrifter);
+}
+
+function sorterPrøver() {
+    let oppskriftDiv = document.querySelector("#oppskriftDiv");
+    oppskriftDiv.innerHTML = "";
+
+    kokebok.orderByChild("matrett/0").equalTo("5").on("child_added", hentOppskrifter);
 }
 
 function sorterAlt() {
