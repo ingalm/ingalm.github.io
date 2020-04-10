@@ -21,44 +21,43 @@
         };
         firebase.initializeApp(config);
     </script>
-    <script src="index.js" type="text/javascript"></script>
-
 </head>
-<body onload="loadIndex()">
-<header>
-    <div id="topBar">
-        <div id="login">
-            <a onclick="visLogin()">LEGG TIL OPPSKRIFT</a>
-            <div id="loginForm">
-                <img src="bilder/close.png" onclick="lukkLogin()">
-                <p>Logg inn som administrator</p>
-                <span id="feilmelding">Feil brukernavn eller passord</span>
-                <div>
-                    <input id="brukernavn" type="text" placeholder="Brukernavn">
-                    <input id="passord" type="password" placeholder="Passord">
+<body onload="sorterAlt()">
+    <header>
+        <div id="topBar">
+            <div id="login">
+                <a onclick="visLogin()">LEGG TIL OPPSKRIFT</a>
+                <div id="loginForm">
+                    <img src="bilder/close.png" onclick="lukkLogin()">
+                    <p>Logg inn som administrator</p>
+                    <span id="feilmelding">Feil brukernavn eller passord</span>
+                    <div>
+                        <input id="brukernavn" type="text" placeholder="Brukernavn">
+                        <input id="passord" type="password" placeholder="Passord">
+                    </div>
+                    <p onclick="loggInnKlikk()" id="loginBtn">Logg inn</p>
                 </div>
-                <p onclick="loggInnKlikk()" id="loginBtn">Logg inn</p>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<main>
-    <img id="bakgrunnBilde">
-    <div id="navOppskrifter">
-        <p onclick="sorterFrokost()">FROKOST</p>
-        <p onclick="sorterMiddag()">MIDDAG</p>
-        <p onclick="sorterDessert()">DESSERT</p>
-        <p onclick="sorterBakst()">BAKST</p>
-        <p onclick="sorterAlt()">ALT</p>
-        <p onclick="sorterPrøver()">TESTOPPSKRIFTER</p>
-    </div>
-    <input onkeyup="search()" type="text" id="search">
-    <div id="oppskriftDiv">
+    <main>
+        <img id="bakgrunnBilde">
+        <div id="navOppskrifter">
+            <p onclick="sorterFrokost()">FROKOST</p>
+            <p onclick="sorterMiddag()">MIDDAG</p>
+            <p onclick="sorterDessert()">DESSERT</p>
+            <p onclick="sorterBakst()">BAKST</p>
+            <p onclick="sorterAlt()">ALT</p>
+            <p onclick="sorterPrøver()">TESTOPPSKRIFTER</p>
+        </div>
+        <input onkeyup="search()" type="text" id="search">
+        <div id="oppskriftDiv">
 
-    </div>
-</main>
+        </div>
+    </main>
 
-<footer></footer>
+    <footer></footer>
+    <script src="index.js" type="text/javascript"></script>
 </body>
 </html>

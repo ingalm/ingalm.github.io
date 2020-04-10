@@ -2,11 +2,6 @@ let db = firebase.database();
 let kokebok = db.ref("kokebok");
 let brukere = db.ref("brukere");
 
-//Loader index på load
-function loadIndex() {
-    kokebok.on("child_added", hentOppskrifter);
-}
-
 //Viser innloggingsvinduet
 function visLogin() {
     document.querySelector("#loginForm").style.display = "block";
@@ -91,7 +86,7 @@ function hentOppskrifter(snapshot) {
 
     if (oppskrift.matrett[0] != "5") {
         oppskriftDiv.innerHTML += `
-        <a onclick="lagreOppskriftLokalt(event)" class="oppskrift">
+        <a data-matrett="${oppskrift.matrett}" onclick="lagreOppskriftLokalt(event)" class="oppskrift">
             <div></div>
             <img src="bilder/oppskrifter/` + camelize(oppskriftKey) + `.jpg">
             <p>${oppskriftKey}</p>
@@ -107,15 +102,15 @@ function camelize(str) {
     }).replace(/\s+/g, '');
 }
 
+let oppskriftDiv = document.querySelector("#oppskriftDiv");
+
 function sorterFrokost() {
-    let oppskriftDiv = document.querySelector("#oppskriftDiv");
     oppskriftDiv.innerHTML = "";
 
     kokebok.orderByChild("matrett/0").equalTo("0").on("child_added", hentOppskrifter);
 }
 
 function sorterMiddag() {
-    let oppskriftDiv = document.querySelector("#oppskriftDiv");
     oppskriftDiv.innerHTML = "";
 
     kokebok.orderByChild("matrett/0").equalTo("1").on("child_added", hentOppskrifter);
@@ -123,7 +118,6 @@ function sorterMiddag() {
 }
 
 function sorterDessert() {
-    let oppskriftDiv = document.querySelector("#oppskriftDiv");
     oppskriftDiv.innerHTML = "";
 
     kokebok.orderByChild("matrett/0").equalTo("2").on("child_added", hentOppskrifter);
@@ -132,7 +126,6 @@ function sorterDessert() {
 }
 
 function sorterBakst() {
-    let oppskriftDiv = document.querySelector("#oppskriftDiv");
     oppskriftDiv.innerHTML = "";
 
     kokebok.orderByChild("matrett/0").equalTo("3").on("child_added", hentOppskrifter);
@@ -142,17 +135,28 @@ function sorterBakst() {
 }
 
 function sorterPrøver() {
-    let oppskriftDiv = document.querySelector("#oppskriftDiv");
-    oppskriftDiv.innerHTML = "";
+    oppskriftDiv.innerHTML = `<p id="oppskriftFeil">Disse oppskriftene er ikke prøvd enda, de kan være dårlige</p>`;
 
-    kokebok.orderByChild("matrett/0").equalTo("5").on("child_added", hentOppskrifter);
+    kokebok.orderByChild("matrett/0").equalTo("4").on("child_added", hentOppskrifter);
 }
 
 function sorterAlt() {
-    let oppskriftDiv = document.querySelector("#oppskriftDiv");
     oppskriftDiv.innerHTML = "";
 
     kokebok.on("child_added", hentOppskrifter);
+
+    setTimeout(fjernPrøver, 1500);
+}
+
+//Fjerner prøveoppskrifter når siden lastes inn, så de ikke syns på frontsiden
+function fjernPrøver() {
+    let oppskrifter = oppskriftDiv.querySelectorAll("a");
+
+    for(let i = 0; i < oppskrifter.length; i++) {
+        if(oppskrifter[i].dataset.matrett === "4") {
+            oppskrifter[i].style.display = "none";
+        }
+    }
 }
 
 //Loader ny side når man klikker på den
@@ -172,7 +176,7 @@ function hentValgtOppskrift() {
         let oppskrift = snapshot.val();
         let oppskriftKey = snapshot.key;
 
-        document.querySelector("#bilde").style.backgroundImage = "url('bilder/oppskrifter/" + camelize(oppskriftKey) + ".jpg')";
+        document.querySelector("#bilde").style.backgroundImage = `url("bilder/oppskrifter/${camelize(oppskriftKey)}.jpg")`;
 
         let ovnsfunksjonRef = db.ref("ovnsfunksjoner/" + oppskrift.tips.funksjon);
 

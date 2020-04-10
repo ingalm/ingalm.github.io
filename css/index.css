@@ -2,6 +2,7 @@ body {
     margin: 0;
     background: white;
     min-width: 800px;
+    font-family: montserrat, sans-serif;
 }
 
 #topBar {
@@ -19,11 +20,11 @@ body {
     height: 50px;
     width: 18%;
     margin-left: 20px;
-    font-family: montserrat, sans-serif;
 }
 
 #login a:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 #login p:last-of-type:hover {
@@ -62,7 +63,6 @@ body {
 }
 
 #login p {
-    font-family: montserrat, sans-serif;
     font-size: 90%;
     text-align: center;
     width: 80%;
@@ -71,7 +71,6 @@ body {
 }
 
 #login span {
-    font-family: montserrat, sans-serif;
     font-size: 80%;
     color: red;
     position: absolute;
@@ -83,7 +82,6 @@ body {
 }
 
 #loginBtn {
-    font-family: montserrat, sans-serif;
     font-size: 90%;
     margin: 30px auto 0 auto !important;
     text-align: center;
@@ -126,7 +124,6 @@ body {
     font-size: 1.2em;
     color: black;
     text-decoration: none;
-    font-family: montserrat, sans-serif;
     line-height: 100px;
     margin: 0;
 }
@@ -148,6 +145,12 @@ body {
 
 #search:focus {
     outline: none;
+}
+
+#oppskriftFeil {
+    grid-column: span 3;
+    text-align: center;
+    font-size: 1.2em;
 }
 
 #oppskriftDiv {
@@ -182,7 +185,6 @@ body {
 
 .oppskrift p {
     margin: 15px 15px;
-    font-family: montserrat, sans-serif;
 }
 
 footer {
