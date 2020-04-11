@@ -13,7 +13,9 @@ function lukkLogin() {
 }
 
 //Kaller informasjonen om brukere fra databasen
-function loggInnKlikk() {
+function loggInnKlikk(event) {
+    event.preventDefault();
+
     brukere.on("child_added", loggInn)
 }
 
@@ -31,10 +33,6 @@ function loggInn(snapshot) {
         else {
             feil.style.display = "block";
         }
-    }
-
-    else {
-        feil.style.display = "block";
     }
 }
 
@@ -138,6 +136,10 @@ function sorterPrøver() {
     oppskriftDiv.innerHTML = `<p id="oppskriftFeil">Disse oppskriftene er ikke prøvd enda, de kan være dårlige</p>`;
 
     kokebok.orderByChild("matrett/0").equalTo("4").on("child_added", hentOppskrifter);
+    kokebok.orderByChild("matrett/1").equalTo("4").on("child_added", hentOppskrifter);
+    kokebok.orderByChild("matrett/2").equalTo("4").on("child_added", hentOppskrifter);
+    kokebok.orderByChild("matrett/3").equalTo("4").on("child_added", hentOppskrifter);
+    kokebok.orderByChild("matrett/4").equalTo("4").on("child_added", hentOppskrifter);
 }
 
 function sorterAlt() {
@@ -153,7 +155,7 @@ function fjernPrøver() {
     let oppskrifter = oppskriftDiv.querySelectorAll("a");
 
     for(let i = 0; i < oppskrifter.length; i++) {
-        if(oppskrifter[i].dataset.matrett === "4") {
+        if(oppskrifter[i].dataset.matrett.includes("4")) {
             oppskrifter[i].style.display = "none";
         }
     }
@@ -219,5 +221,63 @@ function hentValgtOppskrift() {
         let navnH1 = document.querySelector("#navn");
 
         navnH1.innerHTML = oppskriftKey;
+
+        //Legger til at man kan flytte oppskriften til den vanlige delen av siden dersom man har testet oppskriften, på prøveoppskrifter
+        if(oppskrift.matrett.includes("4")) {
+            let godkjenning = document.querySelector("#oppskriftGodkjenning");
+            godkjenning.style.display = "block";
+            godkjenning.dataset.matrett = `${oppskrift.matrett}`;
+        }
     })
+}
+
+//Flytter en prøveoppskrift til å bli en godkjent oppskrift
+function flyttPosisjonKlikk(event) {
+    event.preventDefault();
+
+    brukere.on("child_added", flyttPosisjon);
+}
+
+function flyttPosisjon(snapshot) {
+    let brukernavn = document.querySelector("#brukernavn").value;
+    let passord = document.querySelector("#passord").value;
+    let info = document.querySelector("#feilmelding");
+    let bruker = snapshot.val();    
+
+    if (brukernavn === bruker.navn) {
+        if (passord === bruker.passord) {
+              //Henter ut hvilke matretter oppskriften skal ligge på
+            let matretterInfo = document.querySelector("#oppskriftGodkjenning").dataset.matrett;
+            let matretter = pushEvery(matretterInfo, 2);
+
+            //Fjerner at den skal likke på prøveoppskrifter;
+            matretter.pop();
+
+            kokebok.child("BA's Sjokoladekjeks").child("matrett").set(matretter);
+
+            info.style.display = "block";
+            info.innerHTML = "Oppskriften er flyttet";
+            info.style.color = "black";
+        }
+        else {
+            info.style.display = "block";
+            info.innerHTML = "Feil passord";
+            info.style.color = "red";
+        }
+    }
+
+    else {
+        info.style.display = "block";
+    }
+}
+
+
+function pushEvery(str, n) {
+    let arr = new Array;
+    
+    for (let i = 0; i < str.length; i += n) {
+        arr.push(str[i]);
+    }
+
+    return arr;
 }

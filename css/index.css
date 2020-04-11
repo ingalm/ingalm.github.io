@@ -2,7 +2,7 @@ body {
     margin: 0;
     background: white;
     min-width: 800px;
-    font-family: montserrat, sans-serif;
+    font-family: montserrat, monospace;
 }
 
 #topBar {
@@ -27,17 +27,14 @@ body {
     cursor: pointer;
 }
 
-#login p:last-of-type:hover {
-    background: #cccccc;
-}
 
-#login > div {
+#login form {
     position: absolute;
-    margin-top: -50px;
     width: 280px;
     height: 300px;
     background: white;
     display: none;
+    margin-top: -50px;
 }
 
 #login > div div {
@@ -83,16 +80,17 @@ body {
 
 #loginBtn {
     font-size: 90%;
-    margin: 30px auto 0 auto !important;
+    margin: 30px auto 0 auto;
     text-align: center;
     height: 30px;
     line-height: 30px;
-    width: 40% !important;
-    background: rgba(245, 245, 245,1);
+    width: 50% !important;
     border: none;
+    font-family: montserrat, monospace;
+    display: block;
 }
 
-#loginBtn {
+#loginBtn:hover {
     background: rgba(225,225,225,0.8);
     cursor: pointer;
 }

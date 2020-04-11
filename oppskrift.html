@@ -25,30 +25,45 @@
 
 </head>
 <body onload="hentValgtOppskrift()">
-<header>
-    <div id="topBar">
-        <a href="index.html">KOKEBOKA</a>
-    </div>
-</header>
-<div id="bilde"></div>
-<div id="wrapper">
-    <div id="innhold">
-        <h1>Ingredienser</h1>
-        <div id="ingrediensWrapper">
-            <div id="info">
-
+    <header>
+        <div id="topBar">
+            <div id="login">
+                <a id="oppskriftGodkjenning" onclick="visLogin()">Godkjenn oppskrift</a>
+                <form onsubmit="flyttPosisjonKlikk(event)" id="loginForm">
+                    <img src="bilder/close.png" onclick="lukkLogin()">
+                    <p>Logg inn som administrator</p>
+                    <span id="feilmelding">Feil brukernavn eller passord</span>
+                    <div>
+                        <input id="brukernavn" type="text" placeholder="Brukernavn">
+                        <input id="passord" type="password" placeholder="Passord">
+                    </div>
+                    <button id="loginBtn">Flytt oppskrift</button>
+                </form>
             </div>
-            <div id="ingredienser">
+            <a href="index.html">KOKEBOKA</a>
+        </div>
+    </header>
+    <main>
+        <div id="bilde"></div>
+        <div id="wrapper">
+            <div id="innhold">
+                <h1>Ingredienser</h1>
+                <div id="ingrediensWrapper">
+                    <div id="info">
 
+                    </div>
+                    <div id="ingredienser">
+
+                    </div>
+                </div>
+            </div>
+            <div id="oppskrift">
+                <h1 id="navn"></h1>
+                <ol id="steg">
+
+                </ol>
             </div>
         </div>
-    </div>
-    <div id="oppskrift">
-        <h1 id="navn"></h1>
-        <ol id="steg">
-
-        </ol>
-    </div>
-</div>
+    </main>
 </body>
 </html>

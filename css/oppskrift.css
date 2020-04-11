@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: montserrat,monospace;
 }
 
 #topBar {
@@ -15,11 +16,97 @@ body {
     line-height: 80px;
     width: 20%;
 
-    font-family: montserrat;
-    font-size: 1.8vw;
+    font-size: 1.4em;
     text-align: center;
     text-decoration: none;
     color: black;
+}
+
+#oppskriftGodkjenning {
+    height: inherit;
+    position: absolute;
+    background: rgba(255,255,255,0);
+    border: none;
+    font-size: 1.1em !important;
+    display: none;
+}
+
+#oppskriftGodkjenning:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#login form {
+    position: absolute;
+    width: 280px;
+    height: 300px;
+    background: white;
+    display: none;
+}
+
+#login > div div {
+    margin-top: 30px;
+}
+
+#login img {
+    position: absolute;
+    margin-left: 84%;
+    padding: 2%;
+    width: 12%;
+}
+
+#login img:hover {
+    background: rgba(225,225,225,0.8);
+    cursor: pointer;
+}
+
+#login input {
+    width: 60%;
+    display: block;
+    margin: 35px auto;
+}
+
+#login p {
+    font-size: 90%;
+    text-align: center;
+    width: 80%;
+    display: block;
+    margin: 50px auto 0 auto;
+}
+
+#login button {
+    font-size: 90%;
+    text-align: center;
+    width: 80%;
+    display: block;
+    margin: 50px auto 0 auto;
+}
+
+#login span {
+    font-size: 80%;
+    color: red;
+    position: absolute;
+    text-align: center;
+    top: 75px;
+    width: 80%;
+    margin: 0 10%;
+    display: none;
+}
+
+#loginBtn {
+    font-size: 90%;
+    margin: 30px auto 0 auto !important;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    width: 50% !important;
+    font-family: montserrat, monospace;
+    border: none;
+}
+
+#loginBtn:hover {
+    background: rgba(225,225,225,0.8);
+    cursor: pointer;
 }
 
 #bilde {
@@ -52,14 +139,11 @@ body {
 }
 
 #innhold h1 {
-    font-family: montserrat,monospace;
     font-size: 1.6em;
-
-    margin: 40px 1.5vw 40px 1.5vw;
+    margin: 5.2vh 1.5vw 5.2vh 1.5vw;
 }
 
 #innhold p {
-    font-family: montserrat, monospace;
     margin: 0 20px 40px 1.5vw;
     font-size: 1.2vw;
 }
@@ -74,10 +158,9 @@ body {
 }
 
 #oppskrift h1 {
-    font-family: montserrat, monospace;
     font-size: 1.5em;
 
-    margin: 40px 3vw 40px 3vw;
+    margin: 5.2vh 3vw 5.2vh 3vw;
 }
 
 #oppskrift ol {
@@ -87,7 +170,6 @@ body {
 
 #oppskrift li {
     padding: 0 0 25px 1vw;
-    font-family: montserrat, monospace;
     font-size: 1.2vw;
 }
 

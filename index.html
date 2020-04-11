@@ -27,16 +27,16 @@
         <div id="topBar">
             <div id="login">
                 <a onclick="visLogin()">LEGG TIL OPPSKRIFT</a>
-                <div id="loginForm">
+                <form onsubmit="loggInnKlikk(event)" id="loginForm">
                     <img src="bilder/close.png" onclick="lukkLogin()">
                     <p>Logg inn som administrator</p>
-                    <span id="feilmelding">Feil brukernavn eller passord</span>
+                    <span id="feilmelding">Feil passord</span>
                     <div>
                         <input id="brukernavn" type="text" placeholder="Brukernavn">
                         <input id="passord" type="password" placeholder="Passord">
                     </div>
-                    <p onclick="loggInnKlikk()" id="loginBtn">Logg inn</p>
-                </div>
+                    <button id="loginBtn">Logg inn</button>
+                </form>
             </div>
         </div>
     </header>
@@ -49,7 +49,7 @@
             <p onclick="sorterDessert()">DESSERT</p>
             <p onclick="sorterBakst()">BAKST</p>
             <p onclick="sorterAlt()">ALT</p>
-            <p onclick="sorterPrøver()">TESTOPPSKRIFTER</p>
+            <p onclick="sorterPrøver()">PRØVEOPPSKRIFTER</p>
         </div>
         <input onkeyup="search()" type="text" id="search">
         <div id="oppskriftDiv">

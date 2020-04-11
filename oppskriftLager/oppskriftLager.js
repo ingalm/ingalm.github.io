@@ -119,10 +119,6 @@ function lagreOppskrift() {
         if (checkbox.checked) {
             retter.push(checkbox.value);
         }
-
-        if (retter.includes("4")) {
-            retter = ["4"];
-        }
     }
 
     matrett.set(retter);
