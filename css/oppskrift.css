@@ -10,7 +10,7 @@ body {
     box-shadow: 0 -30px 10px 40px rgba(255, 255, 255,0.85);
 }
 
-#topBar a {
+#topBar > a {
     display: block;
     margin: auto;
     line-height: 80px;
@@ -27,8 +27,12 @@ body {
     position: absolute;
     background: rgba(255,255,255,0);
     border: none;
-    font-size: 1.1em !important;
+    font-size: 1.1em;
     display: none;
+
+    width: 20%;
+    line-height: 80px;
+    text-align: center;
 }
 
 #oppskriftGodkjenning:hover {
