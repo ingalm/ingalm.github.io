@@ -6,4 +6,4 @@ Laget med Google Firebase som backend, og html og javascript som frontend.
 
 Fungerer ikke med Apple produkter.
 
-Kan finnes på https://www.ingalm.github.io
+Kan finnes på https://ingalm.github.io/
